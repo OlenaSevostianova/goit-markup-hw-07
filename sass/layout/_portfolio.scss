@@ -1,32 +1,32 @@
 .portfolio {
     color: var(--accent-color);
     position: relative;
-  }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 4px;
+      background: var(--accent-color);
+      border-radius: 2px;
+      position: absolute;
+      bottom: 0;
+    }
+  } 
   
-  .portfolio::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 4px;
-    background: var(--accent-color);
-    border-radius: 2px;
-    position: absolute;
-    bottom: 0;
-  }
-  
-  .portfolio-link {
+  .portfolio-list__link {
     display: block;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .portfolio-link:hover,
-  .portfolio-link:focus {
+
+    &:hover,
+    &:focus {
     background: #ffffff;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
       1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
   }
   
-  .tumb-portfolio {
+  .portfolio-list__tumb {
     position: relative;
     overflow: hidden;
   }
@@ -46,12 +46,13 @@
     background: rgba(33, 150, 243, 0.9);
     transform: translateY(100%);
     transition: transform 250ms ease;
+
+    .portfolio-list__link:hover &,
+    .portfolio-list__link:focus & {
+    transform: translateY(0);
+    }  
   }
   
-  .portfolio-link:hover .overlay,
-  .portfolio-link:focus .overlay {
-    transform: translateY(0);
-  }
   
   .portfolio-filter {
     display: flex;
@@ -59,11 +60,11 @@
     margin-bottom: 50px;
   }
   
-  .portfolio-filter-list:not(:last-child) {
+  .portfolio-filter__list:not(:last-child) {
     margin-right: 8px;
   }
   
-  .filter {
+  .portfolio-filter__element {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.63;
@@ -78,34 +79,34 @@
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
       background 250ms cubic-bezier(0.4, 0, 0.2, 1),
       box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        color: var(--btn-text-light);
+        background: var(--accent-color);
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+          1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
   }
-  
-  .filter:hover,
-  .filter:focus {
-    color: var(--btn-text-light);
-    background: var(--accent-color);
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-      1px 4px 6px rgba(0, 0, 0, 0.16);
-  }
-  
+ 
   .portfolio-list {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
   }
   
-  .portfolio-card {
+  .portfolio-list__card {
     flex-basis: calc((100% - 60px) / 3);
   }
   
-  .portfolio-link-bottom {
+  .portfolio-list__link-bottom {
     padding: 20px 24px;
     border-right: 1px solid #eeeeee;
     border-bottom: 1px solid #eeeeee;
     border-left: 1px solid #eeeeee;
   }
   
-  .project-name {
+  .portfolio-list__project-name {
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
@@ -114,7 +115,7 @@
     margin-bottom: 4px;
   }
   
-  .project-description {
+  .portfolio-list__project-description {
     font-size: 16px;
     line-height: 1.875;
     letter-spacing: 0.03em;

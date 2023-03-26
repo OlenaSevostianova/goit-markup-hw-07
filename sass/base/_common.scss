@@ -18,22 +18,17 @@ img {
 }
 
 .lists,
-.social-list-item,
-.clients-list,
-.footer-social-list-item {
+.clients__list,
+.footer-social-list__item {
   list-style: none;
 }
 
 .links,
 .contacts-email-footer,
 .contacts-namber-footer,
-.portfolio-link,
-.social-list-link {
+.portfolio-list__link,
+.social-list__link {
   text-decoration: none;
   font-style: normal;
 }
 
-.section {
-    padding-top: 94px;
-    padding-bottom: 94px;
-  }
